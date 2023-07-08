@@ -14,7 +14,6 @@ namespace Core_Proje.ViewComponents.Contact
 
         MessageManager messageManager = new MessageManager(new EfMessageDal());
 
-        [HttpGet]
         public IViewComponentResult Invoke()
         {
             return View();
