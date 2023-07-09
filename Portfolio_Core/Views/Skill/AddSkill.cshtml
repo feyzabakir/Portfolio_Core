@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add Skill Page</h3>
+</div>
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("Skill Title")
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Value</label>
+    <input type="text" name="Value" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>
