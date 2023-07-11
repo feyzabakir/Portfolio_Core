@@ -1,39 +1,37 @@
 ﻿@model EntityLayer.Concrete.Experience
 @{
     ViewData["Title"] = "AddExperience";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h3 class="mb-0">Add Experience Page</h3>
-</div>
 @using (Html.BeginForm("AddExperience", "Experience", FormMethod.Post))
 {
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
+                <p class="card-description">Add Experinece Panel </p>
                 <form class="forms-sample">
                     <div class="form-group">
                         <label>Title</label>
-                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                        <input type="text" class="form-control" name="Name">
                     </div>
                     <div class="form-group">
                         <label>Date</label>
-                        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                        <input type="text" class="form-control" name="Date">
                     </div>
                     <div class="form-group">
-                        <label>Image</label>
-                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        <label>Description</label>
-                        @Html.TextAreaFor(x => x.Date, 10, 3, new { @class = "form-control" })
+                        <label>Image URL</label>
+                        <input type="text" class="form-control" name="Image URL">
                     </div>
 
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="Description" rows="6"></textarea>
+                    </div>
                     <button type="submit" class="btn btn-primary mr-2">Save</button>
+                    <button class="btn btn-dark">Cancel</button>
                 </form>
             </div>
         </div>
     </div>
 }
-

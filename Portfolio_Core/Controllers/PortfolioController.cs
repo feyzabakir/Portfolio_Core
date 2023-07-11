@@ -16,10 +16,7 @@ namespace Portfolio_Core.Controllers
         PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
 
         public IActionResult Index()
-        {
-            ViewBag.v1 = "Portfolio List";
-            ViewBag.v2 = "Portfolios";
-            ViewBag.v3 = "Portfolio List";
+        {     
             var values = portfolioManager.TGetList();
             return View(values);
         }

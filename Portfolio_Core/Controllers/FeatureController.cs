@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +11,20 @@ namespace Portfolio_Core.Controllers
 {
     public class FeatureController : Controller
     {
+        FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
+
+        [HttpGet]
         public IActionResult Index()
+        {        
+            var values = featureManager.TGetByID(1);
+            return View(values);
+        }
+
+        [HttpPost]
+        public IActionResult Index(Feature f)
         {
-            return View();
+            featureManager.TUpdate(f);
+            return RedirectToAction("Index", "Default");
         }
     }
 }

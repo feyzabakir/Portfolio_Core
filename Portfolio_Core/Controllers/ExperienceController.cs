@@ -14,19 +14,13 @@ namespace Portfolio_Core.Controllers
         ExperienceManager experienceManager = new ExperienceManager(new EfExperienceDal());
 
         public IActionResult Index()
-        {
-            ViewBag.v1 = "Experience List";
-            ViewBag.v2 = "Experiences";
-            ViewBag.v3 = "Experience List";
+        {       
             var values = experienceManager.TGetList();
             return View(values);
         }
         [HttpGet]
         public IActionResult AddExperience()
         {
-            ViewBag.v1 = "Add Experience";
-            ViewBag.v2 = "Experiences";
-            ViewBag.v3 = "Add Experience";
             return View();
         }
         [HttpPost]
@@ -45,9 +39,6 @@ namespace Portfolio_Core.Controllers
         [HttpGet]
         public IActionResult EditExperience(int id)
         {
-            ViewBag.v1 = "Edit Experience";
-            ViewBag.v2 = "Experiences";
-            ViewBag.v3 = "Edit Experience";
             var values = experienceManager.TGetByID(id);
             return View(values);
         }
