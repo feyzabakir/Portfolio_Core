@@ -35,5 +35,9 @@ namespace Portfolio_Core.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult NewSidebar()
+        {
+            return PartialView();
+        }
     }
 }
