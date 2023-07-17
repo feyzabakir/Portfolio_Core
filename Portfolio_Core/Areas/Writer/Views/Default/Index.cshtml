@@ -1,5 +1,5 @@
-﻿@*@using EntityLayer.Concrete
-@model List<Announcement>*@
+﻿@using EntityLayer.Concrete
+@model List<Announcement>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @*@foreach (var item in Model)
+                        @foreach (var item in Model)
                         {
                             if (item.Status == "Yeni Yazı")
                             {
@@ -51,7 +51,7 @@
                                 <td><label class="@color">@item.Status</label></td>
                                 <td><a href="/Writer/Default/AnnouncementDetails/@item.ID" class="btn btn-outline-primary">Detaylar</a></td>
                             </tr>
-                        }*@
+                        }
                     </tbody>
                 </table>
             </div>
