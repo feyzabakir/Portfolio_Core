@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Abstract
+namespace DataAccessLayer.Abstract
 {
-    public interface IUserMessageService: IGenericService<UserMessage>
+    public interface IWriterMessageDal: IGenericDal<WriterMessage>
     {
-        List<UserMessage> GetUserMessageWithUserService();
     }
 }

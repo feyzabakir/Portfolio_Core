@@ -1,15 +1,18 @@
-﻿using EntityLayer.Concrete;
+﻿using Portfolio_Core.Areas.Writer.Models;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Portfolio_Core.Areas.Writer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Portfolio_Core.Areas.Writer.Controllers
+namespace Core_Proje.Areas.Writer.Controllers
 {
+    [AllowAnonymous]
     [Area("Writer")]
+    [Route("Writer/[controller]/[action]")]
     public class LoginController : Controller
     {
         private readonly SignInManager<WriterUser> _signInManager;
@@ -18,13 +21,11 @@ namespace Portfolio_Core.Areas.Writer.Controllers
         {
             _signInManager = signInManager;
         }
-
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Index(UserLoginViewModel p)
         {
@@ -33,7 +34,7 @@ namespace Portfolio_Core.Areas.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password, true, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Portfolio", new { area = "Writer" });
+                    return RedirectToAction("Index", "Profile", new { area = "Writer" });
                 }
                 else
                 {
@@ -41,6 +42,12 @@ namespace Portfolio_Core.Areas.Writer.Controllers
                 }
             }
             return View();
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

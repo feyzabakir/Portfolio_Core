@@ -1,19 +1,20 @@
-﻿using EntityLayer.Concrete;
+﻿using Portfolio_Core.Areas.Writer.Models;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Portfolio_Core.Areas.Writer.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Portfolio_Core.Areas.Writer.Controllers
+namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-        [Route("Writer/[controller]/[action]")]
+    [Route("Writer/[controller]/[action]")]
     public class ProfileController : Controller
     {
+
         private readonly UserManager<WriterUser> _userManager;
 
         public ProfileController(UserManager<WriterUser> userManager)
@@ -47,11 +48,11 @@ namespace Portfolio_Core.Areas.Writer.Controllers
             }
             user.Name = p.Name;
             user.SurName = p.Surname;
-            //user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Default");
+                return RedirectToAction("Index", "Login");
             }
             return View();
         }
