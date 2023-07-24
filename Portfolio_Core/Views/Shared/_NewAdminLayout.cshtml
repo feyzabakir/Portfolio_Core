@@ -48,7 +48,7 @@
                     </ul>
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item dropdown d-none d-lg-block">
-                            <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Yeni Proje Ekleme</a>
+                            <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Ekle</a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                                 <h6 class="p-3 mb-0">Proje Türü</h6>
                                 <div class="dropdown-divider"></div>
@@ -85,7 +85,7 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <p class="p-3 mb-0 text-center">Tüm Projeleri Gör</p>
+                                <p class="p-3 mb-0 text-center"><a href="/Portfolio/Index/">Tüm Projeleri Gör</a></p>
                             </div>
                         </li>
                         <li class="nav-item nav-settings d-none d-lg-block">
@@ -99,10 +99,10 @@
                                 <span class="count bg-success"></span>
                             </a>
 
-                            @*@await Component.InvokeAsync("AdminNavbarMessageList")*@
+                            @await Component.InvokeAsync("AdminNavbarMessageList")
 
                         </li>
-                        @*@await Component.InvokeAsync("AdminNotificationNavbarList")*@
+                        @await Component.InvokeAsync("AdminNotificationNavbarList")
                         <li class="nav-item dropdown">
                             <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                                 <div class="navbar-profile">
@@ -172,24 +172,6 @@
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/off-canvas.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/hoverable-collapse.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/misc.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/settings.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/todolist.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/chart.js/Chart.min.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/progressbar.js/progressbar.min.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/dashboard.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <!-- End custom js for this page -->
+    
 </body>
 </html>
