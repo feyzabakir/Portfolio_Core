@@ -1,6 +1,15 @@
-﻿namespace DataAccessLayer.EntityFramework
+﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Repository;
+using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccessLayer.EntityFramework
 {
-    internal interface EfSocialMediaDal
+    public class EfSocialMediaDal : GenericRepository<SocialMedia>, ISocialMediaDal
     {
     }
 }
