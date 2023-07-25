@@ -30,26 +30,26 @@ namespace Portfolio_Core.Controllers
             return PartialView();
         }
 
-        //[HttpPost]
-        //public PartialViewResult SendMessage(Message p)
-        //{
-        //    MessageManager messageManager = new MessageManager(new EfMessageDal());
-        //    p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-        //    p.Status = true;
-        //    messageManager.TAdd(p);
-        //    return PartialView();
-        //}
-
         [HttpPost]
-        public IActionResult SendMessage(Message message)
-
+        public PartialViewResult SendMessage(Message p)
         {
             MessageManager messageManager = new MessageManager(new EfMessageDal());
-            message.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            message.Status = true;
-            messageManager.TAdd(message);
-            return RedirectToAction("Index");
-
+            p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            p.Status = true;
+            messageManager.TAdd(p);
+            return PartialView();
         }
+
+        //[HttpPost]
+        //public IActionResult SendMessage(Message message)
+
+        //{
+        //    MessageManager messageManager = new MessageManager(new EfMessageDal());
+        //    message.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+        //    message.Status = true;
+        //    messageManager.TAdd(message);
+        //    return RedirectToAction("Index");
+
+        //}
     }
 }
