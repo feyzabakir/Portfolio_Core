@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Portfolio_Core.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class DashboardController : Controller
       
     {
