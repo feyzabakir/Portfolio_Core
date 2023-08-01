@@ -29,9 +29,9 @@ namespace Portfolio_Core.Controllers
             var values = JsonConvert.SerializeObject(p);
             return Json(values);
         }
-        public IActionResult GetById(int ExprerienceID)
+        public IActionResult GetById(int ExperienceID)
         {
-            var v = experienceManager.TGetByID(ExprerienceID);
+            var v = experienceManager.TGetByID(ExperienceID);
             var values = JsonConvert.SerializeObject(v);
             return Json(values);
         }
@@ -43,10 +43,14 @@ namespace Portfolio_Core.Controllers
         }
         public IActionResult UpdateExperince(Experience p)
         {
-            var v = experienceManager.TGetByID(p.ExperienceID);
-            experienceManager.TUpdate(v);
-            var values = JsonConvert.SerializeObject(p);
-            return Json(values);
+            var existingExperience = experienceManager.TGetByID(p.ExperienceID);
+            existingExperience.Name = p.Name;
+            existingExperience.ImageUrl = p.ImageUrl;
+            existingExperience.Date = p.Date;
+            existingExperience.Description = p.Description;
+            experienceManager.TUpdate(existingExperience);
+            var updatedValues = JsonConvert.SerializeObject(existingExperience);
+            return Json(updatedValues);
         }
     }
 }

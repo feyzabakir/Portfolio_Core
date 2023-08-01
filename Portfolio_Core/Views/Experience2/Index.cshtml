@@ -52,7 +52,13 @@
     <h5>Güncelleme Paneli</h5>
     <input type="text" class="form-control" id="inpeditexpid" placeholder="ID Giriniz" />
     <br />
-    <input type="text" class="form-control" id="inpeditexpname" placeholder="Tarih Giriniz" />
+    <input type="text" class="form-control" id="inputupname" placeholder="Adını Giriniz" />
+    <br />
+    <input type="text" class="form-control" id="inputupDate" placeholder="Tarih Giriniz" />
+    <br />
+    <input type="text" class="form-control" id="inputupImgUrl" placeholder="Resim URL" />
+    <br />
+    <input type="text" class="form-control" id="inputupDescription" placeholder="Açıklama Giriniz" />
 </div>
 
 @section scripts
@@ -71,7 +77,7 @@
 
                     let htmlst = "<table class=table table-bordered> <tr> <th> ID </th> <th> Başlık </th> <th> Tarih </th> </tr>";
                     $.each(values, (index, value) => {
-                        htmlst += `<tr> <td>${value.ExprerienceID}</td> <td>${value.Name}</td> <td>${value.Date}</td> </tr>`
+                        htmlst += `<tr> <td>${value.ExperienceID}</td> <td>${value.Name}</td> <td>${value.Date}</td> </tr>`
                     });
                     htmlst += "</table>";
                     $("#listexperience").html(htmlst);
@@ -104,11 +110,11 @@
                 dataType: "json",
                 type: "Get",
                 url: "/Experience2/GetById/",
-                data: { ExprerienceID: id },
+                data: { ExperienceID: id },
                 success: function (funk2) {
                     let result = jQuery.parseJSON(funk2);
                     console.log(result);
-                    let htmlstr = `<table class=table table-hover> <tr> <th>Deneyim ID</th> <td>${result.ExprerienceID}</td></tr> <tr> <th> Deneyim Başlığı </th> <td> ${result.Name}</td> </tr> </table>`;
+                    let htmlstr = `<table class=table table-hover> <tr> <th>Deneyim ID</th> <td>${result.ExperienceID}</td></tr> <tr> <th> Deneyim Başlığı </th> <td> ${result.Name}</td> </tr> </table>`;
                     $("#listbyidexperience").html(htmlstr);
                 }
             });
@@ -118,24 +124,29 @@
         $("#btndelete").click(x => {
             let id = $("#inpexpid").val();
             $.ajax({
-                url: "/Experience/DeleteExperience/" + id,
+                url: "/Experience2/DeleteExperience/" + id,
                 type: "post",
                 contentType: "application/json",
                 dataType: "json",
                 success: function (funk3) {
+                    alert("Başarılı bir şekilde silindi");
                     loadData();
+                    
                 }
             });
         });
 
         $("#btnupdate").click(function () {
             let values = {
-                ExprerienceID: $("#inpeditexpid").val(),
-                Name: $("#inpeditexpname").val()
+                ExperienceID: $("#inpeditexpid").val(),
+                Name: $("#inputupname").val(),
+                Date: $("#inputupDate").val(),
+                ImageUrl: $("#inputupImgUrl").val(),
+                Description: $("#inputupDescription").val()
             };
 
             $.ajax({
-                type: "post",
+                type: "POST",
                 url: "/Experience2/UpdateExperince/",
                 data: values,
                 success: function (func4) {
@@ -143,7 +154,6 @@
                 }
             });
         });
-
     </script>
 }
 <script src="~/lib/jquery/dist/jquery.js"></script>
