@@ -81,7 +81,7 @@ html {
 
 .wave-bg {
   display: block;
-  height: 220px;
+  height: 150px;
   width: 100%;
   min-width: 600px;
   transform-origin: top;
@@ -90,6 +90,20 @@ html {
   background-image: url("../images/wave-bg.svg");
   background-position: center;
   background-repeat: no-repeat;
+
+}
+.wave-bg2 {
+    display: block;
+    height: 150px;
+    width: 100%;
+    min-width: 600px;
+    transform-origin: top;
+    -webkit-animation: none; /* Animasyonu kaldýrýyoruz */
+    animation: none; /* Animasyonu kaldýrýyoruz */
+    background-image: url("../images/wave-bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(180deg); /* 180 derece döndürme */
 }
 
 img.avatar {

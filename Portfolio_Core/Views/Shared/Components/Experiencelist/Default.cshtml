@@ -4,30 +4,49 @@
 <div class="section px-3 px-lg-4 pt-5" id="experience">
     <div class="container-narrow">
         <div class="text-center mb-5">
-            <h2 class="marker marker-center">Experience</h2>
+            <h2 class="marker marker-center">Deneyimlerim</h2>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                @foreach (var item in Model)
-                {
+
+        @for (int i = 0; i < Model.Count; i += 2)
+        {
+            <div class="row">
+                <div class="col-md-6">
                     <div class="card mb-3" data-aos="fade-right" data-aos-delay="100">
                         <div class="card-header px-3 py-2">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h3 class="h5 mb-1">@item.Name</h3>
-                                    <div class="text-muted text-small">@item.Date</div>
-                                </div><img src="@item.ImageUrl" width="48" height="48" alt="experience" />
+                                    <h3 class="h5 mb-1">@Model[i].Name</h3>
+                                    <div class="text-muted text-small">@Model[i].Date</div>
+                                </div><img src="@Model[i].ImageUrl" width="48" height="48" alt="experience" />
                             </div>
                         </div>
                         <div class="card-body px-3 py-2">
-                           
-                            <p>@item.Description</p>
+                            <p>@Model[i].Description</p>
+                        </div>
+                    </div>
+                </div>
+                @if (i + 1 < Model.Count)
+                {
+                    <div class="col-md-6">
+                        <div class="card mb-3" data-aos="fade-right" data-aos-delay="100">
+                            <div class="card-header px-3 py-2">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h3 class="h5 mb-1">@Model[i + 1].Name</h3>
+                                        <div class="text-muted text-small">@Model[i + 1].Date</div>
+                                    </div><img src="@Model[i + 1].ImageUrl" width="48" height="48" alt="experience" />
+                                </div>
+                            </div>
+                            <div class="card-body px-3 py-2">
+                                <p>@Model[i + 1].Description</p>
+                            </div>
                         </div>
                     </div>
                 }
-
             </div>
+        }
 
-        </div>
+
+
     </div>
 </div>
