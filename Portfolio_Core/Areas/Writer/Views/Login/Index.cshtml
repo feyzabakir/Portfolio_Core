@@ -8,79 +8,82 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+    <title>Giriş Sayfası</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="~/skydash/vendors/feather/feather.css">
-    <link rel="stylesheet" href="~/skydash/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="~/skydash/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="~/skydash/css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="~/skydash/images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/loginv07/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container-scroller">
-        <div class="container-fluid page-body-wrapper full-page-wrapper">
-            <div class="content-wrapper d-flex align-items-center auth px-0">
-                <div class="row w-100 mx-0">
-                    <div class="col-lg-4 mx-auto">
-                        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                            <div class="brand-logo">
-                                <img src="~/skydash/images/logo.svg" alt="logo">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Hoş geldiniz!</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <div class="wrap d-md-flex">
+                        <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                            <div class="text w-100">
+                                <h2>Oturum açmaya hoş geldiniz</h2>
+                                <p>Hesabınız yok mu?</p>
+                                <a href="/Writer/Register/Index/" class="btn btn-white btn-outline-white">Kayıt Ol</a>
                             </div>
-                            <h4>Merhaba Projenin Yazar Paneline Hoş Geldiniz!</h4>
-                            <h6 class="font-weight-light">Devam etmek için giriş yapın.</h6>
-                            <form class="pt-3" method="post">
-                                <div class="form-group">
+                        </div>
+                        <div class="login-wrap p-4 p-lg-5">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <h3 class="mb-4">Giris Yap</h3>
+                                </div>
+                            </div>
+
+                            <form action="#" class="signin-form" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="label" for="name">Kullanıcı Adı</label>
                                     <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" name="Username" placeholder="Kullanıcı adınız">
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="password">Sifre</label>
+                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="Password" placeholder="Şifreniz" required>
+                                </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="Password" placeholder="Şifreniz">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
                                 </div>
-                                <div class="mt-3">
-                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Giriş Yap</button>
-                                </div>
-                                <div class="my-2 d-flex justify-content-between align-items-center">
-                                    <div class="form-check">
-                                        <label class="form-check-label text-muted">
-                                            <input type="checkbox" class="form-check-input">
-                                            Beni hatırla
+                                <div class="form-group d-md-flex">
+                                    <div class="w-50 text-left">
+                                        <label class="checkbox-wrap checkbox-primary mb-0">
+                                            Beni Hatırla
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
                                         </label>
                                     </div>
-                                </div>
-
-                                <div class="text-center mt-4 font-weight-light">
-                                    Bir hesabın yok mu? <a href="/Writer/Register/Index/" class="text-primary">Oluştur</a>
+                                    <div class="w-50 text-md-right">
+                                        <a href="#">Şifremi Unuttum</a>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
         </div>
-        <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="~/skydash/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="~/skydash/js/off-canvas.js"></script>
-    <script src="~/skydash/js/hoverable-collapse.js"></script>
-    <script src="~/skydash/js/template.js"></script>
-    <script src="~/skydash/js/settings.js"></script>
-    <script src="~/skydash/js/todolist.js"></script>
-    <!-- endinject -->
-</body>
+    </section>
 
+    <script src="~/loginV07/js/jquery.min.js"></script>
+    <script src="~/loginV07/js/popper.js"></script>
+    <script src="~/loginV07/js/bootstrap.min.js"></script>
+    <script src="~/loginV07/js/main.js"></script>
+
+</body>
 </html>
+
+
+
+
+
+
+
