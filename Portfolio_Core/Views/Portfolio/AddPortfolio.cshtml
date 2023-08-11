@@ -1,4 +1,5 @@
 ﻿@model EntityLayer.Concrete.Portfolio
+
 @{
     ViewData["Title"] = "AddPortfolio";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
@@ -9,47 +10,45 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <p class="card-description"> Add Project Panel </p>
+                <p class="card-description"> Yeni Proje Ekleme Paneli </p>
                 <form class="forms-sample">
                     <br />
-                    @Html.Label("Project Title")
+                    @Html.Label("Proje Başlığı")
                     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.Name)
                     <br />
-                    <label>Image 1</label>
+                    <label>Görsel 1</label>
                     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.ImageUrl)
                     <br />
-                    <label>Image 2</label>
+                    <label>Görsel2</label>
                     @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.ImageUrl2)
                     <br />
-                    <label>Project URL</label>
+                    <label>Proje URL</label>
                     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.ProjectUrl)
                     <br />
-                    <label>Price</label>
+                    <label>Fiyat</label>
                     @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.Price)
                     <br />
-                    <label>Completion</label>
+                    <label>Tamamlanma Oranı</label>
                     @Html.TextBoxFor(x => x.Values, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.Values)
                     <br />
-                    <label>Project URL</label>
+                    <label>Proje URL</label>
                     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.ProjectUrl)
                     <br />
-                    <label>Project URL</label>
+                    <label>Proje URL</label>
                     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.ProjectUrl)
                     <br />
-                    <button class="btn btn-info">Save</button>
+                    <button class="btn btn-info">Kaydet</button>
 
                 </form>
             </div>
         </div>
     </div>
 }
-
-

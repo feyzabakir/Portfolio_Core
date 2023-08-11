@@ -1,4 +1,5 @@
 ﻿@model EntityLayer.Concrete.About
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
@@ -9,18 +10,18 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <p class="card-description"> Edit About Page </p>
+                <p class="card-description"> Deneyim Düzenleme Paneli </p>
                 <form class="forms-sample">
                     <div class="form-group">
                         <label>ID</label>
-                        @Html.TextBoxFor(x => x.AboutID, new { @class = "form-control", @disabled = "disabled", style = "background-color: #696969;" })
+                        @Html.TextBoxFor(x => x.AboutID, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <label>Title</label>
+                        <label>Başlık</label>
                         @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <label>Age</label>
+                        <label>Yaş</label>
                         @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
@@ -28,24 +29,24 @@
                         @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
+                        <label>Adres</label>
                         @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <label>Phone</label>
+                        <label>Telefon</label>
                         @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
-                        <label>Image URL</label>
+                        <label>Görsel URL</label>
                         @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
                     </div>
 
                     <div class="form-group">
-                        <label>Description</label>
+                        <label>Açıklama</label>
                         @Html.TextAreaFor(x => x.Description, 6, 3, new { @class = "form-control" })
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Save</button>
-                    <button class="btn btn-dark">Cancel</button>
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button class="btn btn-dark">İptal</button>
                 </form>
             </div>
         </div>
