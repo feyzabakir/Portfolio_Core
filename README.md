@@ -1,4 +1,7 @@
 # Portfolio_Core
+Asp.Net Core 5.0 ile Adım Adım Web Geliştirme
+
+[![Kurs Linki](https://img.shields.io/badge/Kurs%20Linki%20-izlemek%20için%20tıklayın-purple)](https://www.udemy.com/course/aspnet-core-5-ile-adim-adim-web-gelistirme/)
 ## Proje Hakkında: 
 Bu proje, ASP.NET Core 5.0 kullanılarak Entity Framework Core ve N Katmanlı Mimarisi prensipleriyle geliştirilmiştir. Code-First yaklaşımı benimsenerek, SQL Server veritabanını destekleyen bir Portfolyo websitesi projesi oluşturulmuştur. Proje, Varsayılan, Yazar ve Yönetici (Admin) panellerini içermektedir.
 
